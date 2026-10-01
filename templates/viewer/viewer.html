@@ -1,0 +1,13 @@
+{% extends "_shared/base.html" %}
+{% block head %}<meta name="gw-viewer-template-version" content="3.3.4"><title>{{ title | default('GhostReader+ Archive') }}</title>{{ favicon_link | safe }}<script>(function(){try{var savedTheme=localStorage.getItem("gw-theme");if(savedTheme==="light"||savedTheme==="dark")document.documentElement.setAttribute("data-theme",savedTheme);}catch(e){}})();</script><style>{% include 'viewer/style.css' %}</style>{% endblock %}
+{% block body %}
+  {% include 'viewer/partials/loader.html' %}{% include 'viewer/partials/overlays.html' %}{% include 'viewer/partials/help-modal.html' %}{% include 'viewer/partials/sidebar.html' %}
+  <div class="main-area">
+    {% include 'viewer/partials/header.html' %}
+    {% include 'viewer/partials/chat-container.html' %}
+    {% include 'viewer/partials/floating-nav.html' %}
+    {% include 'viewer/partials/search-bar.html' %}
+  </div>
+  {% include 'viewer/partials/right-rail.html' %}{% include 'viewer/partials/toast.html' %}
+{% endblock %}
+{% block scripts %}<script src="../../vendor/highlight.min.js" onerror="this.onerror=null;this.src='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js';"></script><script src="../../vendor/katex.min.js" onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js';"></script><script src="../../vendor/katex-auto-render.min.js" onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js';"></script><script>{% include 'viewer/mini-markdown.js' %}</script><script>{% include 'viewer/script.js' %}</script>{% endblock %}

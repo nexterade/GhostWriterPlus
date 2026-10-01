@@ -1,0 +1,33 @@
+{% extends "_shared/base.html" %}
+{% block head %}
+  <meta name="gw-reader-template-version" content="3.3.4">
+  <title>{{ TITLE }}</title>
+  {{ FAVICON_LINK | safe }}
+  <script>(function(){try{var t=localStorage.getItem('gw-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+  <style>{% include 'reader/style.css' %}</style>
+{% endblock %}
+{% block body %}
+<div class="reader-app" id="reader-app">
+  <div class="reader-sidebar-overlay" id="sidebar-overlay"></div><div class="reader-right-overlay" id="right-rail-overlay"></div>
+  {% include 'reader/partials/sidebar.html' %}
+  <div class="main-area reader-main-area">
+    {% include 'reader/partials/header.html' %}
+    <span id="stat-pages" hidden>{{ TOTAL_PAGES }}</span>
+    {% include 'reader/partials/reader-container.html' %}
+    {% include 'reader/partials/floating-nav.html' %}
+    {% include 'reader/partials/footer.html' %}
+  </div>
+  {% include 'reader/partials/right-rail.html' %}
+  <div class="drawer-scrim" id="drawer-scrim"></div>
+  {% include 'reader/partials/mode-popover.html' %}
+  {% include 'reader/partials/settings-popover.html' %}
+  {% include 'reader/partials/notes-popover.html' %}
+  {% include 'reader/partials/stats-modal.html' %}
+  {% include 'reader/partials/global-stats-modal.html' %}
+  {% include 'reader/partials/properties-modal.html' %}
+  <div class="brightness-layer" id="brightness-layer" aria-hidden="true"></div>
+  {% include 'reader/partials/toast.html' %}
+  {% include 'reader/partials/loader.html' %}
+</div>
+{% endblock %}
+{% block scripts %}<script>window.READER_DATA = {{ READER_JSON | safe }};</script><script>{% include 'reader/script.js' %}</script>{% endblock %}

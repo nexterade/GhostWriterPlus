@@ -1,0 +1,28 @@
+<aside class="sidebar reader-sidebar collapsed" id="library-drawer" aria-label="Library">
+  <div class="sidebar-header">
+    <a class="gw-brand reader-brand-name" href="../../index.html" title="Kembali ke arsip">{{ LOGO_SVG | safe }}<span class="gw-wordmark">GhostReader+</span></a>
+    <button class="sidebar-icon-btn" id="sidebar-close-btn" title="Tutup sidebar" aria-label="Tutup sidebar">✕</button>
+  </div>
+  <div class="sidebar-list">
+    <div class="sidebar-section">
+      <div class="sidebar-section-label"><span class="section-icon">📖</span> Buku Aktif</div>
+      <div class="sidebar-book-card">
+        <div class="sidebar-book-title">{{ TITLE }}</div><div class="sidebar-book-meta">{{ SUBTITLE }}</div>
+        <div class="book-progress-bar"><div class="book-progress-fill" id="sidebar-book-progress-fill"></div></div>
+        <div class="book-progress-text"><span id="sidebar-book-progress-text">0%</span><span id="sidebar-book-page-text">1 / {{ TOTAL_PAGES }}</span></div>
+      </div>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-section-label"><span class="section-icon">📊</span> Statistik Baca</div>
+      <div class="reader-stats-detail">
+        <div class="stat-row stat-progress-row"><div class="stat-row-head"><span class="stat-icon">📊</span><span class="stat-label">Progress</span><span class="stat-value" id="sidebar-stat-progress">0%</span></div><div class="stat-progress-bar"><div class="stat-progress-fill" id="sidebar-stat-progress-fill"></div></div></div>
+        <div class="stat-row"><span>Halaman</span><strong id="sidebar-stat-current">1 / {{ TOTAL_PAGES }}</strong></div>
+        <div class="stat-row"><span>Terlihat</span><strong id="sidebar-stat-seen">0 / {{ TOTAL_PAGES }}</strong></div>
+        <div class="stat-row"><span>Waktu baca</span><strong id="sidebar-stat-time">0d</strong></div>
+        <div class="stat-row"><span>Streak</span><strong id="sidebar-stat-streak">0 hari</strong></div>
+      </div>
+    </div>
+    <div class="sidebar-section"><div class="sidebar-section-label"><span class="section-icon">🗂</span> Library</div><div id="library-list" class="library-list"></div></div>
+  </div>
+  <div class="sidebar-footer"><div class="sidebar-footer-brand"><span>👻</span><span>GhostReader+</span></div></div>
+</aside>

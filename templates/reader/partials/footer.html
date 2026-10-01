@@ -1,0 +1,16 @@
+<footer class="reader-footer" id="reader-footer" aria-label="Reading progress and statistics">
+  <div class="slider-bar" id="slider-bar">
+    <span id="page-label">1 / {{ TOTAL_PAGES }}</span>
+    <input id="progress-slider" type="range" min="1" max="{{ TOTAL_PAGES }}" value="1" aria-label="Reading progress">
+    <span id="percent-label">0%</span>
+  </div>
+  <div class="stats-footer" id="stats-footer" aria-live="polite">
+    <div class="stats-row">
+      <span class="stat-item" title="Progress"><span class="stat-icon">📊</span><span class="stat-value" id="footer-stat-progress">0%</span></span><span class="stat-sep">·</span>
+      <span class="stat-item" title="Halaman"><span class="stat-icon">📄</span><span class="stat-value" id="footer-stat-current">1/{{ TOTAL_PAGES }}</span></span><span class="stat-sep">·</span>
+      <span class="stat-item" title="Terlihat"><span class="stat-icon">👁️</span><span class="stat-value" id="footer-stat-seen">0</span></span><span class="stat-sep">·</span>
+      <span class="stat-item" title="Waktu baca"><span class="stat-icon">⏱️</span><span class="stat-value" id="footer-stat-time">0d</span></span>
+    </div>
+    <div class="stats-row"><span class="stat-item" title="Streak"><span class="stat-icon">📈</span><span class="stat-value" id="footer-stat-streak">0 hari</span></span></div>
+  </div>
+</footer>

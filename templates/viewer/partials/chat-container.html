@@ -1,0 +1,58 @@
+    <main class="chat-container" id="chat-container">
+      {% for msg in messages %}
+        {% set raw_len = (msg.content or '')|length %}
+        {% set is_long = raw_len > 800 %}
+        {% if msg.role == 'user' %}
+          <div class="message-row user" data-role="user" data-msg-index="{{ loop.index0 }}" id="msg-{{ loop.index0 }}">
+            <div class="bubble-wrapper">
+              <div class="bubble markdown-body {% if is_long %}collapsible{% endif %}" data-raw="{{ msg.content }}" data-length="{{ raw_len }}"></div>
+              <div class="bubble-meta">
+                <button class="copy-msg-btn msg-action-btn" title="Copy pesan ini">📋</button>
+                <button class="msg-action-btn msg-tts-btn" title="Text to Speech">🔊</button>
+                <button class="msg-action-btn msg-share-btn" title="Share">↪️</button>
+                <button class="msg-action-btn msg-bookmark-btn" title="Bookmark">⭐</button>
+                <div class="msg-menu-wrapper">
+                  <button class="msg-menu-btn" title="Menu export">⋯</button>
+                  <div class="msg-menu-dropdown">
+                    <button class="msg-menu-item" data-action="copy-md"><span class="icon">📋</span>Copy as Markdown</button>
+                    <button class="msg-menu-item" data-action="save-md"><span class="icon">💾</span>Save as .md</button>
+                    <div class="msg-menu-divider"></div>
+                    <button class="msg-menu-item" data-action="copy-link"><span class="icon">🔗</span>Copy Permalink</button>
+                  </div>
+                </div>
+                {% if msg.timestamp %}
+                  <span class="meta-time">{{ msg.timestamp }}</span>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        {% else %}
+          <div class="message-row ai" data-role="assistant" data-msg-index="{{ loop.index0 }}" id="msg-{{ loop.index0 }}">
+            <div class="avatar ai">AI</div>
+            <div class="bubble-wrapper">
+              <div class="bubble markdown-body {% if is_long %}collapsible{% endif %}" data-raw="{{ msg.content }}" data-length="{{ raw_len }}"></div>
+              <div class="bubble-meta">
+                <button class="copy-msg-btn msg-action-btn" title="Copy pesan ini">📋</button>
+                <button class="msg-action-btn msg-tts-btn" title="Text to Speech">🔊</button>
+                <button class="msg-action-btn msg-share-btn" title="Share">↪️</button>
+                <button class="msg-action-btn msg-bookmark-btn" title="Bookmark">⭐</button>
+                <div class="msg-menu-wrapper">
+                  <button class="msg-menu-btn" title="Menu export">⋯</button>
+                  <div class="msg-menu-dropdown">
+                    <button class="msg-menu-item" data-action="copy-md"><span class="icon">📋</span>Copy as Markdown</button>
+                    <button class="msg-menu-item" data-action="save-md"><span class="icon">💾</span>Save as .md</button>
+                    <div class="msg-menu-divider"></div>
+                    <button class="msg-menu-item" data-action="copy-link"><span class="icon">🔗</span>Copy Permalink</button>
+                  </div>
+                </div>
+                {% if msg.timestamp %}
+                  <span class="meta-time">{{ msg.timestamp }}</span>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </main>
+
+</main>

@@ -1,0 +1,39 @@
+    <header id="main-header">
+      <div class="header-info">
+        <button class="sidebar-toggle" id="sidebar-toggle" title="Toggle sidebar">☰</button>
+        <div class="status-dot"></div>
+        <div class="header-title-group">
+          <div class="header-title" id="chat-title">{{ title }}</div>
+          <div class="header-subtitle" id="header-subtitle">{{ created_at }}</div>
+        </div>
+      </div>
+
+      <div class="header-tools">
+        <button class="header-btn" id="help-toggle" title="Keyboard shortcuts ( ? )">?</button>
+        <button class="header-btn" id="theme-toggle" title="Toggle tema">🌙</button>
+        <div class="header-menu-wrapper">
+          <button class="header-btn" id="header-menu-toggle" title="Menu lainnya">⋮</button>
+          <div class="header-menu-dropdown" id="header-menu-dropdown">
+            <button class="header-menu-item" data-action="print">
+              <span class="icon">🖨</span> Print / Save as PDF
+            </button>
+            <button class="header-menu-item" data-action="export-md"><span class="icon">📝</span> Export as Markdown</button>
+            <button class="header-menu-item" data-action="export-json"><span class="icon">{ }</span> Export as JSON</button>
+            <div class="header-menu-divider"></div>
+            <button class="header-menu-item" data-action="role-all"><span class="icon">👥</span> Semua</button>
+            <button class="header-menu-item" data-action="role-user"><span class="icon">👤</span> User</button>
+            <button class="header-menu-item" data-action="role-ai"><span class="icon">🤖</span> AI</button>
+            <button class="header-menu-item" data-action="collapse-all"><span class="icon">▾</span> Sembunyikan semua</button>
+          </div>
+        </div>
+        <button class="header-btn" id="right-rail-toggle" title="Toggle navigasi user">👤</button>
+      </div>
+    </header>
+
+    <div class="stats-bar" id="stats-bar">
+      <span><span class="stat-icon">📊</span><strong id="stat-msgs">{{ messages|length }}</strong> pesan</span>
+      <span><span class="stat-icon">📝</span><strong id="stat-chars">—</strong> char</span>
+      <span><span class="stat-icon">🎫</span><strong id="stat-tokens">—</strong> token</span>
+      <span><span class="stat-icon">⏱️</span><strong id="stat-duration">—</strong></span>
+    </div>
+

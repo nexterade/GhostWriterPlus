@@ -1,0 +1,28 @@
+  <aside class="sidebar collapsed" id="sidebar" aria-label="Library">
+    <div class="sidebar-header">
+      <a class="gw-brand" href="../../index.html" title="Kembali ke arsip">
+        {{ logo_svg | safe }}
+        <span class="gw-wordmark">GhostReader+</span>
+      </a>
+    </div>
+    <div class="sidebar-list" id="sidebar-list">
+      <div class="sidebar-section">
+        <div class="sidebar-section-label">Saat Ini</div>
+        <div class="sidebar-item active">
+          <span class="sidebar-item-title">{{ title }}</span>
+          <span class="sidebar-item-meta">{{ messages|length }} pesan</span>
+        </div>
+      </div>
+    </div>
+    <div class="sidebar-footer">
+      <div class="sidebar-footer-brand">
+        <span>👻</span>
+        <span>v3.3.2-GW+</span>
+      </div>
+      <div class="sidebar-footer-actions">
+        <button class="sidebar-icon-btn" id="sidebar-close-btn" title="Tutup sidebar (Esc)">✕</button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- === MAIN AREA === -->

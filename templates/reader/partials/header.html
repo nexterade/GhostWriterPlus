@@ -1,0 +1,55 @@
+<header id="main-header" aria-label="Reader header">
+  <div class="header-main-row">
+    <div class="header-info">
+      <button class="sidebar-toggle" id="sidebar-toggle" title="Toggle library" aria-label="Buka atau tutup library">👻</button>
+      <div class="status-dot" aria-hidden="true"></div>
+      <div class="header-title-group">
+        <div class="header-title" id="chat-title">{{ TITLE }}</div>
+        <div class="header-subtitle" id="header-subtitle">{{ SUBTITLE }}</div>
+      </div>
+    </div>
+    <div class="header-tools">
+      <button class="header-btn" id="theme-toggle" title="Toggle tema" aria-label="Ganti tema">🌙</button>
+      <div class="header-menu-wrapper">
+        <button class="header-btn" id="header-menu-toggle" title="Tools pembaca" aria-label="Buka tools pembaca" aria-expanded="false" aria-controls="reader-menu">⋮</button>
+        <div class="header-menu-dropdown reader-tools-dropdown" id="reader-menu" aria-hidden="true">
+          <div class="menu-section" data-menu-section="navigation">
+            <button class="menu-section-toggle" type="button" aria-expanded="false" aria-controls="menu-navigation"><span class="section-icon">📚</span><span class="section-label">Navigasi &amp; Anotasi</span><span class="section-chevron" aria-hidden="true">›</span></button>
+            <div class="menu-section-items" id="menu-navigation" hidden>
+              <button class="header-menu-item" id="bookmark-action" data-menu-action="bookmark"><span class="icon">☆</span> Bookmark halaman</button>
+              <button class="header-menu-item" data-menu-action="pages"><span class="icon">▤</span> Pages</button>
+              <button class="header-menu-item" data-menu-action="notes"><span class="icon">✎</span> Notes &amp; Highlight</button>
+            </div>
+          </div>
+          <div class="menu-section" data-menu-section="reading">
+            <button class="menu-section-toggle" type="button" aria-expanded="false" aria-controls="menu-reading"><span class="section-icon">🎨</span><span class="section-label">Tampilan &amp; Statistik</span><span class="section-chevron" aria-hidden="true">›</span></button>
+            <div class="menu-section-items" id="menu-reading" hidden>
+              <button class="header-menu-item" data-menu-action="mode"><span class="icon">↔</span> Mode baca</button>
+              <button class="header-menu-item" data-menu-action="settings"><span class="icon">⚙</span> Reading settings</button>
+              <button class="header-menu-item" data-menu-action="stats"><span class="icon">📊</span> Statistik baca</button>
+              <button class="header-menu-item" data-menu-action="global-stats"><span class="icon">📈</span> Statistik global</button>
+              <button class="header-menu-item" data-menu-action="properties"><span class="icon">ⓘ</span> Properties buku</button>
+            </div>
+          </div>
+          <div class="menu-section" data-menu-section="export">
+            <button class="menu-section-toggle" type="button" aria-expanded="false" aria-controls="menu-export"><span class="section-icon">📤</span><span class="section-label">Ekspor</span><span class="section-chevron" aria-hidden="true">›</span></button>
+            <div class="menu-section-items" id="menu-export" hidden>
+              <button class="header-menu-item" data-menu-action="export-annotations-json"><span class="icon">⇩</span> Export annotations JSON</button>
+              <button class="header-menu-item" data-menu-action="export-annotations-md"><span class="icon">📝</span> Export annotations MD</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="header-btn" id="pages-toggle" title="Daftar halaman" aria-label="Buka daftar halaman">📑</button>
+    </div>
+  </div>
+  <div class="tts-bar" id="tts-bar" aria-label="Text to Speech controls">
+    <button class="tts-bar-btn" id="tts-play" title="Baca halaman" aria-label="Baca halaman"><span class="tts-icon">🔊</span><span class="tts-label">Baca</span></button>
+    <span class="tts-bar-divider" aria-hidden="true"></span>
+    <button class="tts-bar-btn" id="tts-pause" title="Pause" aria-label="Pause TTS" disabled><span class="tts-icon">⏯</span><span class="tts-label">Pause</span></button>
+    <span class="tts-bar-divider" aria-hidden="true"></span>
+    <button class="tts-bar-btn" id="tts-stop" title="Stop" aria-label="Stop TTS" disabled><span class="tts-icon">⏹</span><span class="tts-label">Stop</span></button>
+    <span class="tts-bar-divider" aria-hidden="true"></span>
+    <span class="tts-clock" id="footer-clock" aria-live="polite">🕐 --:--</span>
+  </div>
+</header>
